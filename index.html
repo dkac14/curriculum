@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!--Styles-->
+    <link rel="stylesheet" href="./stylesheets/map.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <title>Curriculum Vitae</title>
 </head>
 <body>
     <nav>
-
+        <ul>
+            <li>Perfil</li>
+            <li>Educacion</li>
+            <li>Proyectos Destacados</li>
+        </ul>
     </nav>
-    <ul>
-        <li>Perfil</li>
-        <li>Educacion</li>
-        <li>Proyectos Destacados</li>
-    </ul>
-    <h1><span id="nombre"></span></h1>
-    <script src="./script.js"></script>
 
-    <img src="./img/profile.jpg" width="100px">
+    <h1><span id="nombre"></span></h1>
+    <script src="./javascript/typing-effect.js"></script>
+
+    <img src="./img/profile.jpg" width="100px"/>
 
 
     <h2>Perfil</h2>
@@ -49,5 +63,25 @@
     en estructuras de datos y optimizaci´on algor´ıtmica, evidenciando dominio en l´ogica computacional y eficiencia en el
     manejo de informaci´on.</p>
 
+    <div id="map">
+        <script src="./javascript/map.js"></script>
+    </div>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/85MppyLJHz0" title="Video educativo de ejemplo" allowfullscreen></iframe>
+    
+    <form action="/comments" method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <label for="reason">Motivo</label>
+        <input type="text" id="reason" name="reason">
+
+        <br>
+        <br>
+        <button type="summit">Enviar</button>
+    </form>
     </body>
 </html>

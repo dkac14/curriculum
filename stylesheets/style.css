@@ -1,0 +1,19 @@
+:root {
+    /*Colors*/
+    --color-background: #232946;
+    --color-headline: #fffffe;
+    --color-paragraph: #b8c1ec;
+    --color-button: #8bd3ff;
+    --color-button-text: #232946;
+    
+    --color-stroke: #121629;
+    --color-main: #b8c1ec;
+    --color-highlight: #8bd3ff;
+    --color-secondary: #fffffe;
+    --color-tertiary: #90e0ef;
+
+    /*Fonts*/
+    --font-title: "Montserrat", serif;
+    --font-subtitle: "Lora", sans-serif;
+    --font-body: "Hindi Madurai", sans-serif;
+}
