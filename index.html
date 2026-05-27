@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Leaflet-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-    <!--Styles-->
+    <!-- Styles -->
     <link rel="stylesheet" href="./stylesheets/map.css">
     <link rel="stylesheet" href="./stylesheets/style.css">
     
@@ -17,123 +17,336 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <title>Curriculum Vitae</title>
+    <title>Portafolio | Domenica Amores</title>
 </head>
 
 <body>
 
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="menu">
+        <button 
+            class="menu-toggle" 
+            id="menu-toggle" 
+            type="button"
+            aria-label="Abrir menú"
+            aria-controls="menu-links"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="menu-links" id="menu-links">
+            <li><a href="#education">Educación</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO / PRESENTACIÓN -->
     <header class="hero">
         <figure class="hero-photo">
-            <img src="img/profile.jpg" alt="Foto de Domenica Amores" width="500px">
+            <img 
+                class="photo" 
+                src="./img/profile.jpg" 
+                alt="Foto de perfil de Domenica Amores">
         </figure>
 
         <section class="hero-content">
-
             <h1 id="greeting"></h1>
-            <script src="./javascript/typing-effect.js"></script>
-            
 
             <p class="hero-description">
-            Estudiante de Ingenieria en Ciencias de la Computación en ESPOL con enfoque en desarrollo full-stack e inteligencia
-            artificial. Experiencia en hackatones y desarrollo de soluciones tecnológicas orientadas a datos, integrando APIs y
-            construyendo sistemas escalables. Se caracteriza por su pensamiento analítico, capacidad de resolución de problemas
-            y trabajo colaborativo en entornos técnicos.
+                Estudiante de Ingeniería en Ciencias de la Computación en ESPOL con enfoque en desarrollo full-stack e inteligencia
+                artificial. Experiencia en hackatones y desarrollo de soluciones tecnológicas orientadas a datos, integrando APIs y
+                construyendo sistemas escalables. Se caracteriza por su pensamiento analítico, capacidad de resolución de problemas
+                y trabajo colaborativo en entornos técnicos.
             </p>
         </section>
     </header>
 
-    <nav class="menu">
-        <ul>
-            <li><a href="#education">Educación</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-        </ul>
-
-    </nav>
-
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
-        <section id="education">
-        <h2>Educacion</h2>
-            <h3>Escuela Superior Politécnica del Litoral (ESPOL)</h3>
-                <p>Ingeniería en Ciencias de la Computación</p>
 
-            <h3>Academia Naval Almirante Illingworth (ANAI)</h3>
+        <!-- EDUCACIÓN -->
+        <section id="education">
+            <h2>Educación</h2>
+
+            <article>
+                <h3>Escuela Superior Politécnica del Litoral (ESPOL)</h3>
+                <p>Ingeniería en Ciencias de la Computación</p>
+            </article>
+
+            <article>
+                <h3>Academia Naval Almirante Illingworth (ANAI)</h3>
                 <p>Bachiller Técnico TICs</p>
+            </article>
         </section>
 
+        <!-- PROYECTOS -->
         <section id="projects">
             <h2>Proyectos Destacados</h2>
-                <h3>SpaceHACK for Sustainability 2025 (Primer Lugar)</h3>
-                    <p>Desarrollo de una solución basada en datos geoespaciales para identificar rutas seguras y zonas de riesgo, promoviendo
-                    el turismo sostenible en areas agrícolas. Participación en el Team 20: Culture at the heart of sustainable cities, destacando 
-                    en análisis de datos satelitales, toma de decisiones basada en información y trabajo en equipo.</p>
 
-                <h3>NASA Space Apps Challenge 2025 – Computronic</h3>
-                    <p>Construcción de un dashboard interactivo impulsado por inteligencia artificial para la visualizaci´on y s´ıntesis de publicaciones cient´ıficas espaciales. Implementaci´on de arquitectura full-stack con FastAPI y APIs de OpenAI/OpenRouter
-                    en backend, junto con React, Vite y Tailwind en frontend, incluyendo procesamiento de datasets (CSV NASA).</p>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>Chatbot Académico Interactivo 2025</h3>
 
-                <h3>TreeZip – Algoritmo de Huffman (Java)</h3>
-                    <p>Implementaci´on de un sistema de compresi´on de datos utilizando el algoritmo de Huffman en Java. Proyecto enfocado
-                    en estructuras de datos y optimizaci´on algor´ıtmica, evidenciando dominio en l´ogica computacional y eficiencia en el
-                    manejo de informaci´on.</p>
+                    <p>
+                        Desarrollo de un asistente virtual académico automatizado utilizando n8n, integrando Telegram como interfaz
+                        de usuario y MongoDB como base de datos centralizada. Implementación de consultas en tiempo real, recuperación
+                        de FAQs y actualización automática del calendario académico mediante web scraping. Diseño de flujos escalables
+                        con ejecución programada mediante cron y registro de retroalimentación para mejora continua.
+                    </p>
+
+                    <a 
+                        href="https://n8n.io/workflows/10665-university-faq-and-calendar-assistant-with-telegram-mongodb-and-gemini-ai/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Ver workflow del Chatbot Académico Interactivo">
+                        <img 
+                            class="project-img" 
+                            src="./img/pre-ciap_project.png" 
+                            alt="Vista previa del proyecto Chatbot Académico Interactivo">
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <h3>SpaceHACK for Sustainability 2025 — Primer Lugar</h3>
+
+                    <p>
+                        Desarrollo de una solución basada en datos geoespaciales para identificar rutas seguras y zonas de riesgo,
+                        promoviendo el turismo sostenible en áreas agrícolas. Participación en el Team 20: Culture at the Heart of
+                        Sustainable Cities, destacando en análisis de datos satelitales, toma de decisiones basada en información
+                        y trabajo en equipo.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>NASA Space Apps Challenge 2025</h3>
+
+                    <p>
+                        Construcción de un dashboard interactivo impulsado por inteligencia artificial para la visualización y síntesis
+                        de publicaciones científicas espaciales. Implementación de arquitectura full-stack con FastAPI y APIs de
+                        OpenAI/OpenRouter en backend, junto con React, Vite y Tailwind CSS en frontend, incluyendo procesamiento de
+                        datasets en formato CSV de NASA.
+                    </p>
+
+                    <a 
+                        href="https://github.com/dkac14/SpaceApps_Computronic"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Ver repositorio del proyecto NASA Space Apps Challenge">
+                        <img 
+                            class="project-img" 
+                            src="./img/nasa-spaceapps_project.png" 
+                            alt="Vista previa del proyecto NASA Space Apps Challenge 2025">
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <h3>TreeZip — Algoritmo de Huffman 2025</h3>
+
+                    <p>
+                        Implementación de un sistema de compresión de datos utilizando el algoritmo de Huffman en Java. Proyecto enfocado
+                        en estructuras de datos y optimización algorítmica, evidenciando dominio en lógica computacional y eficiencia
+                        en el manejo de información.
+                    </p>
+                </article>
+            </div>
         </section>
+
+        <!-- HABILIDADES -->
+        <section id="skills">
+            <h2>Habilidades</h2>
+
+            <div class="skills-category">
+                <h3>Lenguajes de programación</h3>
+
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Logo de Python">
+                        <span>Python</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Logo de Java">
+                        <span>Java</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="Logo de JavaScript">
+                        <span>JavaScript</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="Logo de TypeScript">
+                        <span>TypeScript</span>
+                    </article>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Desarrollo web</h3>
+
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Logo de HTML5">
+                        <span>HTML</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="Logo de CSS3">
+                        <span>CSS</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="Logo de React">
+                        <span>React</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Logo de Node.js">
+                        <span>Node.js</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="Logo de FastAPI">
+                        <span>FastAPI</span>
+                    </article>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Bases de datos</h3>
+
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="Logo de MySQL">
+                        <span>MySQL</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="Logo de PostgreSQL">
+                        <span>PostgreSQL</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="Logo de MongoDB">
+                        <span>MongoDB</span>
+                    </article>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Herramientas y tecnologías</h3>
+
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Logo de Git">
+                        <span>Git</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Logo de GitHub">
+                        <span>GitHub</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Logo de Docker">
+                        <span>Docker</span>
+                    </article>
+
+                    <article class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="Logo de Visual Studio Code">
+                        <span>VS Code</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO: MAPA + FORMULARIO -->
+        <section id="contact" class="contact-section">
+            <h2>Contacto</h2>
+
+            <div id="map-form" class="contact-layout">
+                <article class="map-card">
+                    <h3>Ubicación</h3>
+                    <p>Si necesitas contactarme en persona, me puedes encontrar en ESPOL.</p>
+                    
+                    <div id="map"></div>
+                </article>
+
+                <form action="/comments" method="post" class="form-contact" enctype="multipart/form-data">
+                    <h3>Envíame un mensaje</h3>
+
+                    <fieldset class="fieldset-contact">
+                        <legend>Datos personales</legend>
+
+                        <label for="name">Nombre completo:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" name="phone">
+
+                        <label for="country-city">País, ciudad:</label>
+                        <input type="text" id="country-city" name="country-city">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Mensaje de contacto</legend>
+
+                        <label for="asunto">Asunto:</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="" disabled selected hidden>Seleccione un asunto</option>
+                            <option value="empleo">Empleo</option>
+                            <option value="recomendacion">Recomendación</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="otro">Otro</option>
+                        </select>
+
+                        <label for="message">Mensaje:</label>
+                        <textarea 
+                            id="message" 
+                            name="message"
+                            placeholder="Escribe tu mensaje aquí"
+                            required></textarea>
+
+                        <label for="file">Archivo adjunto:</label>
+                        <input type="file" id="file" name="file">
+                    </fieldset>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
     </main>
-    <div id="map-form">
-    <div id="map"></div>
-    <script src="./javascript/map.js"></script> 
 
-    <form action="/comments" method="post" class="form-contact">
+    <!-- FOOTER -->
+    <footer id="footer">
+        <p>&copy; 2025 DomKazz. Todos los derechos reservados.</p>
 
-        <fieldset class="fieldset-contact">
-            <legend>Datos Personales</legend>
-                <label for="name">Nombre completo:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
+        <ul class="footer-links">
+            <li>
+                <a href="mailto:domenicaamores2006@gmail.com">Correo</a>
+            </li>
 
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
+            <li>
+                <a href="https://github.com/dkac14" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
 
-                <label for="phone">Telefono:</label>
-                <input type="tel" id="phone" name="phone">
-                <br>
+            <li>
+                <a href="https://www.linkedin.com/in/domenica-katherine-amores-cedeño-178847310/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+        </ul>
+    </footer>
 
-                <label for="country-city">Pais, Ciudad:</label>
-                <input type="text" id="country-city" name="country-city">
-            
-
-        </fieldset>
-
-        <fieldset>
-            <legend>Mensaje de Contacto</legend>
-
-            <label for="asunto">Asunto:</label>
-
-            <select id="asunto" name="asunto">
-                <option value="" disabled selected hidden>Seleccione un asunto</option>
-                <option value="empleo">Empleo</option>
-                <option value="recomendacion">Recomendación</option>
-                <option value="freelance">Freelance</option>
-                <option value="consulta">Consulta</option>
-                <option value="otro">Otro</option>
-            </select>
-
-            <label for="message">Mensaje:</label>
-            <textarea 
-                id="message" 
-                name="message"
-                placeholder="Escribe tu mensaje aquí">
-            </textarea>
-
-            <label for="file">Archivo Adjunto</label>
-            <input type="file" id="file" name="file">
-
-        </fieldset>
-
-        <br>
-        <button type="submit">Enviar</button>
-    </form>
-    </div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/85MppyLJHz0" title="Video educativo de ejemplo" allowfullscreen></iframe>
-    
-    </body>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./javascript/typing-effect.js"></script>
+    <script src="./javascript/map.js"></script>
+    <script src="./javascript/menu.js"></script>
+</body>
 </html>
