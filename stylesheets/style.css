@@ -17,8 +17,8 @@
     --color-tertiary: #90e0ef;
 
     /* Fonts */
-    --font-title: "Montserrat", serif;
-    --font-subtitle: "Lora", sans-serif;
+    --font-title: "Montserrat", sans-serif;
+    --font-subtitle: "Lora", serif;
     --font-body: "Hind Madurai", sans-serif;
 }
 
@@ -33,6 +33,7 @@ html {
 body {
     background-color: var(--color-background);
     margin: 0;
+    line-height: 1.6;
 }
 
 h1 {
@@ -58,15 +59,21 @@ p {
 
 main {
     padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 main section {
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
+
+/* MENÚ */
 
 .menu {
     background-color: var(--color-main);
     padding: 1rem 0.5rem;
+    position: relative;
+    z-index: 20;
 }
 
 .menu-toggle {
@@ -75,6 +82,7 @@ main section {
 
 .menu-links {
     display: flex;
+    flex-direction: row;
     gap: 1rem;
     justify-content: center;
     list-style: none;
@@ -82,13 +90,14 @@ main section {
     margin: 0.5rem;
 }
 
-.menu-links  li {
+.menu-links li {
     margin: 0;
     padding: 0;
 }
 
-.menu-links  a {
+.menu-links a {
     color: var(--color-secondary);
+    font-family: var(--font-body);
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
@@ -107,12 +116,16 @@ main section {
     box-shadow: 0 6px 14px rgba(108, 197, 222, 0.25);
 }
 
+/* HERO */
+
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2.5rem;
-    padding: 2.5rem 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero-photo {
@@ -138,24 +151,66 @@ main section {
 
 .hero-content p {
     line-height: 1.5;
-    
 }
 
-.projects-grid {
-    /*display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;*/
+/* CLUBS */
 
+.clubs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.club-card {
+    background-color: var(--color-surface);
+    border: 2px solid rgba(139, 211, 255, 0.25);
+    border-radius: 18px;
+    padding: 1.5rem;
+    width: min(100%, 320px);
+    min-height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.club-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-highlight);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+}
+
+.club-card p {
+    text-align: center;
+    margin: 0;
+}
+
+.club-logo {
+    width: clamp(6rem, 18vw, 11rem);
+    height: clamp(4rem, 10vw, 6.5rem);
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+/* PROYECTOS */
+
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     justify-items: center;
-
-    
 }
 
 .project-card {
-    
     background-color: var(--color-surface);
     padding: 2rem;
     max-width: 25rem;
@@ -171,8 +226,6 @@ main section {
                 box-shadow 0.3s ease,
                 border-color 0.3s ease;
 }
-
-
 
 .project-card:hover {
     transform: translateY(-4px);
@@ -197,6 +250,8 @@ main section {
     margin-bottom: 1rem;
     border: 2px solid rgba(139, 211, 255, 0.25);
 }
+
+/* HABILIDADES */
 
 .skills-category {
     padding-bottom: 2rem;
@@ -270,7 +325,6 @@ main section {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
 }
 
-/* El mapa necesita altura para verse */
 #map {
     width: 100%;
     min-height: 420px;
@@ -279,7 +333,8 @@ main section {
     border: 2px solid rgba(139, 211, 255, 0.25);
 }
 
-/* Formulario */
+/* FORMULARIO */
+
 .form-contact {
     display: flex;
     flex-direction: column;
@@ -353,6 +408,8 @@ main section {
     box-shadow: 0 6px 14px rgba(108, 197, 222, 0.25);
 }
 
+/* FOOTER */
+
 footer {
     background-color: var(--color-stroke);
     padding: 1.5rem 2rem;
@@ -385,12 +442,12 @@ footer p {
     text-decoration: underline;
 }
 
+/* RESPONSIVE */
 
 @media (width < 770px) {
     .hero {
         flex-direction: column;
         gap: 0.5rem;
-
     }
 
     .hero-content {
@@ -398,7 +455,6 @@ footer p {
     }
 
     .menu {
-        position: relative;
         display: flex;
         justify-content: flex-end;
         padding: 1rem;
@@ -446,7 +502,7 @@ footer p {
                     transform 0.3s ease,
                     visibility 0.3s ease;
 
-        z-index: 10;
+        z-index: 30;
     }
 
     .menu-links.active {
@@ -475,7 +531,4 @@ footer p {
     .form-contact button {
         width: 100%;
     }
-
-
-
 }
